@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Pizzeria Avalon</title>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="order-confirmation.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="confirmation-container">
+        <header>
+            <div class="logo-section">
+                <img src="assets/ui/avalon-logo.png" alt="Avalon Logo" class="confirmation-logo">
+                <div class="logo-text">
+                    <span class="logo-pizzeria">Pizzeria</span>
+                    <span class="logo-avalon">AVALON</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="success-message"></div>
+
+        <div class="order-details">
+            <h2 class="details-title"></h2>
+            <div class="order-items"></div>
+            <div class="order-info">
+                <div class="info-row">
+                    <span class="order-id-label"></span>
+                    <span class="order-id"></span>
+                </div>
+                <div class="info-row">
+                    <span class="order-time-label"></span>
+                    <span class="order-time"></span>
+                </div>
+                <div class="info-row total-row">
+                    <span class="total-amount-label"></span>
+                    <span class="order-total"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-to-menu-container">
+            <button class="back-to-menu" onclick="window.location.href='index.html'"></button>
+        </div>
+       
+
+        <div class="footer-video-container">
+            <div class="marquee">
+                <div class="marquee-content" id="thanksMarqueeContent">
+                    <!-- Il contenuto verrà generato da JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+    <script src="translations.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const orderDetails = JSON.parse(sessionStorage.getItem('orderDetails'));
+            if (!orderDetails) {
+                window.location.href = 'menu.html';
+                return;
+            }
+
+            // Genera il contenuto del marquee
+            const thanksMarqueeContent = document.getElementById('thanksMarqueeContent');
+            const words = ["•", "Grazie", "•", "Thank you", "•", "Merci"];
+            
+            let isFirstSetRed = true;
+            const content = Array(4).fill(null).map(() => {
+                isFirstSetRed = !isFirstSetRed;
+                return words.reduce((acc, word, index) => {
+                    const pairIndex = Math.floor(index / 2);
+                    const isRed = isFirstSetRed ? (pairIndex % 2 === 0) : (pairIndex % 2 === 1);
+                    const color = isRed ? '#b53328' : '#2e1c1b';
+                    return acc + `<span class="word" style="color: ${color}">${word}</span>`;
+                }, '');
+            }).join('');
+            
+            thanksMarqueeContent.innerHTML = content;
+
+            // Setup click handler per invertire l'animazione
+            thanksMarqueeContent.addEventListener('click', function() {
+                this.classList.toggle('reverse');
+            });
+
+            const language = orderDetails.language || localStorage.getItem('language') || 'en';
+            const t = translations.orderConfirmation[language];
+
+            // Update static text
+            document.querySelector('.success-message').textContent = t.successMessage;
+            document.querySelector('.details-title').textContent = t.details;
+            document.querySelector('.order-id-label').textContent = t.orderId;
+            document.querySelector('.order-time-label').textContent = t.orderTime;
+            document.querySelector('.total-amount-label').textContent = t.totalAmount;
+            document.querySelector('.back-to-menu').textContent = t.backToMenu;
+
+            // Display order items
+            const orderItemsContainer = document.querySelector('.order-items');
+            orderItemsContainer.innerHTML = orderDetails.items.map(item => `
+                <div class="order-item">
+                    <span class="item-name">${item.title}${item.quantity > 1 ? ` x${item.quantity}` : ''}</span>
+                    <span class="item-price">€${(item.price * item.quantity).toFixed(2)}</span>
+                </div>
+            `).join('');
+
+            // Display order info
+            document.querySelector('.order-id').textContent = orderDetails.orderId;
+            document.querySelector('.order-time').textContent = orderDetails.time;
+            document.querySelector('.order-total').textContent = `€${orderDetails.total.toFixed(2)}`;
+
+            // Clear the order details from sessionStorage
+            sessionStorage.removeItem('orderDetails');
+        });
+    </script>

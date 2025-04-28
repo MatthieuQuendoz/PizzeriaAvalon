@@ -1,0 +1,759 @@
+@font-face {
+  font-family: 'RichmondHillW90-TwoRegular';
+  src: local('Richmond Hill W90 Two Regular'),
+    url('./assets/fonts/RichmondHillReg.ttf') format('truetype');
+  font-display: swap;
+}
+
+:root {
+  --red: #C64338;
+  --brown: #472D2D;
+  --background: #FDF9F7;
+}
+
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  color: #000;
+  background: var(--background);
+}
+
+section {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  visibility: hidden;
+}
+
+.first {
+  visibility: visible;
+}
+
+section .outer,
+section .inner {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.nav-button:hover {
+  background-color: var(--brown);
+}
+
+/* Text Styles */
+.text-red {
+  font-family: 'RichmondHillW90-TwoRegular', serif;
+  color: var(--red);
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.text-red-2 {
+  font-family: 'RichmondHillW90-TwoRegular', serif;
+  color: var(--red);
+  font-size: 2.4rem;
+  line-height: 1.2;
+}
+
+.text-black,
+.text-location-inline,
+.text-location-inline-2 {
+  font-family: 'CenturySchoolbookPro', serif;
+  color: var(--brown);
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+/* Container for inline text */
+.inline-text-container {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/* Adjust spacing between inline elements */
+.text-location-inline {
+  margin-left: 0.5rem;
+}
+
+.text-location-inline-2 {
+  margin-right: 0.5rem;
+}
+
+section .bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+section .bg h2 {
+  z-index: 2;
+}
+
+section .bg .clip-text {
+  overflow: hidden;
+}
+
+.story-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo Section */
+.logo-section {
+  position: fixed;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.logo-pizzeria {
+  font-family: 'CenturySchoolbookPro', serif;
+  color: var(--brown);
+  font-size: 2rem;
+  opacity: 0.9;
+}
+
+.logo-avalon {
+  font-family: 'RichmondHillW90-TwoRegular', serif;
+  color: var(--red);
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-top: -1rem;
+}
+
+
+/* Main Title */
+.main-title {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 5;
+}
+
+.main-title h1 {
+  font-family: 'CenturySchoolbookPro', serif;
+  color: var(--brown);
+  font-size: 2rem;
+  font-weight: normal;
+  margin-top: 8rem;
+  margin-bottom: -1rem;
+}
+
+.main-title .began {
+  font-family: 'RichmondHillW90-TwoRegular', serif;
+  color: var(--red);
+  font-size: 4.2rem;
+  margin-top: -1rem;
+}
+
+/* Scroll Down */
+.scroll-down {
+  position: fixed;
+  bottom: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--brown);
+  font-size: 1.5rem;
+  z-index: 10;
+  text-align: center;
+}
+
+.scroll-arrow {
+  font-size: 1rem;
+  animation: bounce 2s infinite;
+  margin-top: 0.5rem;
+}
+
+/* Stars */
+.star {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  opacity: 1;
+  transform-origin: center center;
+  will-change: transform;
+  z-index: 5;
+  transition: opacity 0.3s ease;
+}
+
+/* Add this new fallback rotation animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Apply different rotation animations to each star for variety */
+.yellow-star-1 {
+  top: 30%;
+  left: 20%;
+  width: 50px;
+  height: 50px;
+  animation: rotate 15s linear infinite;
+}
+
+.yellow-star-2 {
+  bottom: 30%;
+  right: 10%;
+  width: 50px;
+  height: 50px;
+  animation: rotate 20s linear infinite;
+}
+
+.brown-star-1 {
+  top: 35%;
+  right: 20%;
+  width: 50px;
+  height: 50px;
+  animation: rotate 25s linear infinite reverse;
+}
+
+.brown-star-2 {
+  bottom: 25%;
+  left: 10%;
+  width: 50px;
+  height: 50px;
+  animation: rotate 18s linear infinite;
+}
+
+
+/*Section 2*/
+
+.story-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  top: 5%;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+.front-text,
+.back-text,
+.front-text-fourth,
+.back-text-fourth {
+  position: fixed;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.back-text {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.polaroid-container {
+  position: relative;
+  opacity: 1;
+  transform: translateY(30px);
+}
+
+.polaroid {
+  transform: rotate(-5deg);
+}
+
+/* Content Stars */
+.content-yellow-star-1 {
+  top: 25%;
+  right: 7%;
+}
+
+.content-yellow-star-2 {
+  top: 20%;
+  left: 10%;
+}
+
+/*Section 3*/
+
+
+.story-text-section3 {
+  margin-top: 0rem;
+  margin-bottom: 3rem;
+}
+
+.journey-map {
+  position: relative;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  align-items: center;
+}
+
+.path {
+  width: 90%;
+  height: auto;
+}
+
+.car {
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  transform: translateY(-50%);
+  width: 270px;
+  height: auto;
+  rotate: -12deg;
+}
+
+.quote {
+  text-align: center;
+  font-family: 'CenturySchoolbookPro', serif;
+  color: var(--brown);
+  font-size: 1.3rem;
+  line-height: 0.5;
+  margin-top: 1rem;
+}
+
+.first .bg {
+  background-color: #FDF9F7;
+}
+
+
+.second .bg {
+  background-color: #FDF9F7;
+}
+
+.third .bg {
+  background-color: #FDF9F7;
+}
+
+.fourth .bg {
+  background-color: #FDF9F7;
+}
+
+.fifth .bg {
+  background-color: #FDF9F7;
+  background-position: 50% 45%;
+}
+
+.sixth .bg {
+  background-color: #FDF9F7;
+}
+
+h2 * {
+  will-change: transform;
+}
+
+/*section 4*/
+
+.polaroid-container {
+  opacity: 1;
+  transform: translateY(30px);
+}
+
+.polaroid-top {
+  margin-bottom: 2rem;
+  margin-top: -2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
+  /* Create space for vertical centering */
+}
+
+.story-text-section4 {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.polaroid2 {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 3rem;
+}
+
+.quote-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 5rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.aosta-yellow-star-1 {
+  width: 30px;
+  height: 30px;
+  margin-left: 1rem;
+}
+
+
+/*section five*/
+
+.quote2 {
+  position: relative;
+  text-align: left;
+  font-family: 'CenturySchoolbookPro', serif;
+  color: var(--brown);
+  font-size: 1.5rem;
+  line-height: 0;
+  margin-left: 1rem;
+}
+
+.polaroid3 {
+  position: absolute;
+  height: 450px;
+  margin: 0 auto;
+  display: block;
+  transform: rotate(-3deg);
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-3deg);
+}
+
+.polaroid4 {
+  position: absolute;
+  height: 450px;
+  margin: 0 auto;
+  display: block;
+  transform: rotate(-3deg);
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-3deg);
+}
+
+.star.fourth-yellow-star-1 {
+  top: 10%;
+  right: 5%;
+}
+
+.star.fourth-yellow-star-2 {
+  top: 35%;
+  left: 5%;
+}
+
+.fifth .story-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.fifth .story-text {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 1.5rem;
+
+
+}
+
+/*section 6*/
+
+.final-title {
+  position: fixed;
+  top: 22%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 5;
+  margin-top: 1rem;
+}
+
+.final1 {
+  font-family: 'RichmondHillW90-TwoRegular', serif;
+  color: var(--red);
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.final2 {
+  font-family: 'CenturySchoolbookPro', serif;
+  color: var(--brown);
+  font-size: 2rem;
+  font-weight: normal;
+  margin-top: -2rem;
+}
+
+/* Logo Section */
+.final-logo {
+  position: fixed;
+  left: 50%;
+  top: 85%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+.sixth .yellow-star-1 {
+  top: 10%;
+  left: 10%;
+  width: 50px;
+  height: 50px;
+  animation: rotate 15s linear infinite;
+}
+
+.yellow-star-2 {
+  bottom: 30%;
+  right: 10%;
+  width: 50px;
+  height: 50px;
+  animation: rotate 20s linear infinite;
+}
+
+.sixth .brown-star-1 {
+  top: 37%;
+  right: 15%;
+  width: 50px;
+  height: 50px;
+  animation: rotate 25s linear infinite reverse;
+}
+
+.brown-star-2 {
+  bottom: 25%;
+  left: 10%;
+  width: 50px;
+  height: 50px;
+  animation: rotate 18s linear infinite;
+}
+
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80%;
+  max-width: 600px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.nav-button {
+  font-family: 'Aleo', serif;
+  background-color: #FFF;
+  border: 2.5px solid var(--red);
+  color: var(--brown);
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  min-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.nav-button:hover {
+  background-color: var(--red);
+  color: var(--white);
+  text-decoration: none;
+}
+
+
+.close-button-story {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 36px;
+  color: #472D2D;
+  font-size: 54px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  border: 2px solid #472D2D;
+  background-color: #FFF;
+
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 1100;
+  transition: background-color 0.3s, transform 0.3s;
+  font-family: 'RichmondHillW90-TwoRegular';
+}
+
+.close-button-story:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+.card-container {
+  position: absolute;
+  perspective: 1000px;
+  width: 450px;
+  height: 450px;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+}
+
+.card-front {
+  z-index: 40;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  z-index: 35;
+}
+
+.card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  animation: cardPulse 3s infinite;
+  border-radius: 25px;
+  overflow: hidden;
+
+}
+
+.tap-icon {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  color: var(--red);
+  width: 50px;
+  height: 50px;
+  animation: tapAnimation 2s infinite;
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  padding-left: 18px;
+  padding-top: 15px;
+  box-shadow: 0 0 10px rgba(198, 67, 56, 0.3);
+}
+
+.tap-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes tapAnimation {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+
+/* Aggiungo un'animazione di pulsazione alla card per attirare l'attenzione */
+@keyframes cardPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  
+}
+
+/* Nascondi l'icona quando la card è girata */
+.card.flipped .tap-icon {
+  display: none;
+}

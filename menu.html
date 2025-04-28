@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FFF3CF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Menu - Pizzeria Avalon</title>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <!--
+            <a href="index.html" class="logo-container">
+                 </a>
+            -->
+                <div class="logo-text">
+                    <span class="logo-pizzeria">Pizzeria</span>
+                    <span class="logo-avalon">AVALON</span>
+                </div>
+           
+            <a href="index.html" class="close-button-menu"><</a>
+
+        </div>
+        <nav class="categories" id="categories">
+           
+        </nav>
+    </header>
+
+
+    <div class="cart-container">
+        <button class="cart-button">
+            <img src="assets/ui/cart0.png" alt="Cart empty" class="cart-icon cart-empty">
+            <img src="assets/ui/cart1.png" alt="Cart filled" class="cart-icon cart-filled">
+        </button>
+    </div>
+    
+    <main class="menu-content">
+
+        <div class="marquee">
+            <div class="marquee-content" id="marqueeContent">
+              <!-- Il contenuto verrà generato da JS -->
+            </div>
+        </div>
+
+       
+    </main>
+
+    <script src="menu.js"></script>
+    <script src="translations.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html> 

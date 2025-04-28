@@ -1,0 +1,214 @@
+{
+  "categories": [
+    {
+      "id": "entries",
+      "name": {
+        "en": "Entries",
+        "it": "Antipasti",
+        "fr": "Entrées"
+      },
+      "items": [
+        {
+          "name": "Olive all'ascolana",
+          "price": 6,
+          "description": {
+            "en": "Fried stuffed olives",
+            "it": "Olive fritte ripiene",
+            "fr": "Olives farcies frites"
+          },
+          "image": "assets/menu/antipasti/olive-ascolana.png"
+        },
+        {
+          "name": "Anelli di Cipolla",
+          "price": 5,
+          "description": {
+            "en": "Fried Tropea onions",
+            "it": "Cipolle di Tropea fritte",
+            "fr": "Oignons de Tropea frits"
+          },
+          "image": "assets/menu/antipasti/anelli-cipolla.jpg"
+        },
+        {
+          "name": "Patatine Fritte",
+          "price": 4,
+          "description": {
+            "en": "French fries",
+            "it": "Patatine fritte",
+            "fr": "Frites"
+          },
+          "image": "assets/menu/antipasti/patatine-fritte.png"
+        },
+        {
+          "name": "Affettato Misto",
+          "price": 9,
+          "description": {
+            "en": "Selection of Italian cured meats",
+            "it": "Selezione di salumi italiani",
+            "fr": "Sélection de charcuteries italiennes"
+          },
+          "image": "assets/menu/antipasti/affettato.png"
+        }
+      ]
+    },
+    {
+      "id": "popular-pizzas",
+      "name": {
+        "en": "Popular Pizzas",
+        "it": "Pizze Popolari",
+        "fr": "Pizzas Populaires"
+      },
+      "items": [
+        {
+          "name": "Avalon",
+          "price": 9,
+          "description": {
+            "en": "Tomato, mozzarella, eggplant, gorgonzola, sausage, champignon mushrooms",
+            "it": "Pomodoro, mozzarella, melanzane, gorgonzola, salsiccia, funghi champignon",
+            "fr": "Tomate, mozzarella, aubergine, gorgonzola, saucisse, champignons de Paris"
+          },
+          "image": "assets/menu/pizzePopolari/avalon.png"
+        },
+        {
+          "name": "Pizza alle Verdure",
+          "price": 9,
+          "description": {
+            "en": "Tomato, mozzarella, grilled seasonal vegetables",
+            "it": "Pomodoro, mozzarella, verdure di stagione grigliate",
+            "fr": "Tomate, mozzarella, légumes de saison grillés"
+          },
+          "image": "assets/menu/pizzePopolari/verdure.png"
+        },
+        {
+          "name": "Tapadzo",
+          "price": 10,
+          "description": {
+            "en": "Tomato, mozzarella, rebletzen cheese, sausage, boiled potatoes, walnuts",
+            "it": "Pomodoro, mozzarella, rebletzen, salsiccia, patate lesse e noci",
+            "fr": "Tomate, mozzarella, rebletzen, saucisse, pommes de terre bouillies et noix"
+          },
+          "image": "assets/menu/pizzePopolari/tapadzo.png"
+        },
+        {
+          "name": "Calzone",
+          "price": 8.5,
+          "description": {
+            "en": "Folded pizza filled with tomato, mozzarella, mushrooms, parmesan",
+            "it": "Pizza chiusa ripiena di pomodoro, mozzarella, funghi e parmigiano",
+            "fr": "Pizza pliée farcie de tomate, mozzarella, champignons et parmesan"
+          },
+          "image": "assets/menu/pizzePopolari/calzone.png"
+        }
+      ]
+    },
+    {
+      "id": "classic-pizzas",
+      "name": {
+        "en": "Classic Pizzas",
+        "it": "Pizze Classiche",
+        "fr": "Pizzas Classiques"
+      },
+      "items": [
+        {
+          "name": "Margherita",
+          "price": 5,
+          "description": {
+            "en": "Tomato, mozzarella, basil",
+            "it": "Pomodoro, mozzarella, basilico",
+            "fr": "Tomate, mozzarella, basilic"
+          },
+          "image": "assets/menu/pizzeClassiche/margherita.png"
+        },
+        {
+          "name": "Diavola",
+          "price": 4.5,
+          "description": {
+            "en": "Tomato, mozzarella, spicy salami",
+            "it": "Pomodoro, mozzarella, salame piccante",
+            "fr": "Tomate, mozzarella, salami piquant"
+          },
+          "image": "assets/menu/pizzeClassiche/diavola.png"
+        },
+        {
+          "name": "Valdostana",
+          "price": 8,
+          "description": {
+            "en": "Tomato, mozzarella, ham and fontina cheese",
+            "it": "Pomodoro, mozzarella, prosciutto e fontina",
+            "fr": "Tomate, mozzarella, jambon et fontina"
+          },
+          "image": "assets/menu/pizzeClassiche/valdostana.png"
+        }
+      ]
+    },
+    {
+      "id": "desserts",
+      "name": {
+        "en": "Desserts",
+        "it": "Dolci",
+        "fr": "Desserts"
+      },
+      "items": [
+        {
+          "name": "Pizza alla Nutella",
+          "price": 5,
+          "description": {
+            "en": "Sweet pizza topped with creamy Nutella",
+            "it": "Pizza dolce con crema di Nutella",
+            "fr": "Pizza sucrée garnie de Nutella crémeux"
+          },
+          "image": "assets/menu/dessert/nutella.png"
+        },
+          {
+            "name": "Pizza alle mele",
+            "price": 5,
+            "description": {
+              "en": "Sweet pizza with apples, amaretto and powdered sugar",
+              "it": "Pizza dolce con mele, amaretto e zucchero a velo",
+              "fr": "Pizza sucrée avec pommes, amaretto et sucre glace"
+            },
+            "image": "assets/menu/dessert/mele.png"
+          }
+      ]
+    },
+    {
+      "id": "drinks",
+      "name": {
+        "en": "Drinks",
+        "it": "Bevande",
+        "fr": "Boisson"
+      },
+      "items": [
+        {
+          "name": "Acqua",
+          "price": 2,
+          "description": {
+            "en": "Natural or sparkling water",
+            "it": "Acqua naturale o frizzante",
+            "fr": "Eau plate ou gazeuse"
+          },
+          "image": "assets/menu/bevande/acqua.png"
+        },
+        {
+          "name": "Coca",
+          "price": 3,
+          "description": {
+            "en": "Coca-Cola",
+            "it": "Coca-Cola",
+            "fr": "Coca-Cola"
+          },
+          "image": "assets/menu/bevande/coca.png"
+        },
+        {
+          "name": "Birra",
+          "price": 4.5,
+          "description": {
+            "en": "Draft beer",
+            "it": "Birra alla spina",
+            "fr": "Bière pression"
+          },
+          "image": "assets/menu/bevande/birra.png"
+        }
+      ]
+    }
+  ]
+}
