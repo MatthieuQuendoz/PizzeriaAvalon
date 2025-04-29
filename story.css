@@ -360,7 +360,7 @@ section .bg .clip-text {
   color: var(--brown);
   font-size: 1.3rem;
   line-height: 0.5;
-  margin-top: 1rem;
+  margin-top: 0rem;
 }
 
 .first .bg {
@@ -756,4 +756,21 @@ h2 * {
 /* Nascondi l'icona quando la card è girata */
 .card.flipped .tap-icon {
   display: none;
+}
+
+
+@media (max-width: 400px) {
+  .text-red {
+    font-size: 1.4rem;
+  }
+
+  .text-red-2 {
+    font-size: 1.6rem;
+  }
+
+  .text-black,
+  .text-location-inline,
+  .text-location-inline-2 {
+    font-size: 1.4rem;
+  }
 }
