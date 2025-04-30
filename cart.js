@@ -126,7 +126,11 @@ class Cart {
     }
 
     updateCartDisplay() {
-        this.cartItemsContainer.innerHTML = this.items.map(item => `
+        this.cartItemsContainer.innerHTML = this.items.map(item => {
+            // Escape apostrophes and quotes in item title for JavaScript safety
+            const escapedTitle = item.title.replace(/'/g, "\\'").replace(/"/g, '\\"');
+            
+            return `
             <div class="cart-item">
                 <div class="cart-item-info">
                     <h3 class="cart-item-title">${item.title}</h3>
@@ -134,14 +138,15 @@ class Cart {
                     <div class="cart-item-details">
                         <p class="cart-item-price">€${(item.price * item.quantity).toFixed(2)}</p>
                         <div class="cart-item-quantity">
-                            <button class="quantity-btn minus" onclick="cart.updateQuantity('${item.title}', -1)">-</button>
+                            <button class="quantity-btn minus" onclick="cart.updateQuantity('${escapedTitle}', -1)">-</button>
                             <span class="quantity-value">${item.quantity}</span>
-                            <button class="quantity-btn plus" onclick="cart.updateQuantity('${item.title}', 1)">+</button>
+                            <button class="quantity-btn plus" onclick="cart.updateQuantity('${escapedTitle}', 1)">+</button>
                         </div>
                     </div>
                 </div>
             </div>
-        `).join('');
+            `;
+        }).join('');
 
         const total = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
         this.totalAmount.textContent = `€${total.toFixed(2)}`;
